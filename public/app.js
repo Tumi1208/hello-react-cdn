@@ -1,8 +1,16 @@
 const App = () => {
+  const [color, setColor] = React.useState('#007acc');
+
+  const changeColor = () => {
+    const newColor = color === '#007acc' ? '#ff6f61' : '#007acc';
+    setColor(newColor);
+  };
+
   return (
-    <div style={{fontFamily:'Arial, sans-serif', textAlign:'center', marginTop:80}}>
-      <h1>Hello World — React (served as static files)</h1>
-      <p>This is a minimal React app using CDN (no build step).</p>
+    <div className="container">
+      <h1 style={{color}}>Hello World — React (served as static files)</h1>
+      <p>This is a styled React app using CDN — simple & beautiful.</p>
+      <button onClick={changeColor}>Change Title Color</button>
     </div>
   );
 };
